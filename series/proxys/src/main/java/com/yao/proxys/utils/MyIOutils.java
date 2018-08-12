@@ -1,4 +1,4 @@
-package com.eyao.proxys.utils;
+package com.yao.proxys.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,6 +62,7 @@ public class MyIOutils {
         } catch (IOException e) {
             logger.error(e.getMessage(), e);
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
             logger.error(e.getMessage(), e);
         } finally {
         }
@@ -69,5 +70,8 @@ public class MyIOutils {
     }
 
 
+    public static void deserializeObject() {
 
+
+    }
 }

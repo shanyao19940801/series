@@ -1,4 +1,4 @@
-package com.eyao.proxys;
+package com.yao.proxys;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

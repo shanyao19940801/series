@@ -1,6 +1,6 @@
-package com.eyao.proxys.controler;
+package com.yao.proxys.controler;
 
-import com.eyao.proxys.service.GetProxysService;
+import com.yao.proxys.service.GetProxysService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

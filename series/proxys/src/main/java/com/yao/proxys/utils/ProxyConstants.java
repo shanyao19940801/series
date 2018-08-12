@@ -1,4 +1,4 @@
-package com.eyao.proxys.utils;
+package com.yao.proxys.utils;
 
 import org.springframework.beans.factory.annotation.Value;
 
