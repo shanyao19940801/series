@@ -8,16 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="muse-proxy" />
         <module name="muse-server" />
+        <module name="muse-spider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="muse-proxy" target="1.8" />
       <module name="muse-server" target="1.8" />
+      <module name="muse-spider" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/muse-proxy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/muse-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/muse-spider" charset="UTF-8" />
   </component>
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
@@ -30,6 +33,7 @@
       <list>
         <option value="$PROJECT_DIR$/muse-proxy/pom.xml" />
         <option value="$PROJECT_DIR$/muse-server/pom.xml" />
+        <option value="$PROJECT_DIR$/muse-spider/pom.xml" />
       </list>
     </option>
   </component>
@@ -37,10 +41,14 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/muse-proxy/muse-proxy.iml" filepath="$PROJECT_DIR$/muse-proxy/muse-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/muse-server/muse-server.iml" filepath="$PROJECT_DIR$/muse-server/muse-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/muse-spider/muse-spider.iml" filepath="$PROJECT_DIR$/muse-spider/muse-spider.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="Maven: antlr:antlr:2.7.7">
