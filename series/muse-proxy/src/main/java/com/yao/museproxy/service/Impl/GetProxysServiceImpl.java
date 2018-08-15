@@ -8,6 +8,7 @@ import net.sf.json.JSONSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,16 +19,13 @@ public class GetProxysServiceImpl implements GetProxysService {
     //TODO 将参数改成参数服务器
     public String getProxys(Integer number) {
         String returnString = "";
-        Object o = new Object();
+        List<Proxy> list = (List<Proxy>) MyIOutils.deserializeObjectByPath(path);
         if (number == null) {
-            o = MyIOutils.deserializeObjectByPath(path);
-        } else {
 
+        } else {
+            list = list.subList(0,number);
         }
-//         = (List<Proxy>) MyIOutils.deserializeObjectByPath(path);
-        returnString = JSONSerializer.toJSON(o).toString();
-        List<Proxy> list = JSONArray.toList(JSONArray.fromObject(returnString),Proxy.class);
-        MyIOutils.serializeObject(list,path + "/proxys.ser");
+        returnString = JSONSerializer.toJSON(list).toString();
         return returnString;
     }
 }
