@@ -22,9 +22,9 @@ public class MyIOutils {
     /**
      * 序列化对象
      */
-    public static void serializeObject(Object object, String fileName) {
+    public static void serializeObject(Object object, String path) {
         ObjectOutputStream oos = null;
-        String path = ProxyConstants.RESOURCES__FILE_PATH + "/" + fileName;
+//        String path = ProxyConstants.RESOURCES__FILE_PATH + "/" + fileName;
         try {
             oos = new ObjectOutputStream(new FileOutputStream(path));
             oos.writeObject(object);
@@ -35,6 +35,7 @@ public class MyIOutils {
             MyIOutils.close(oos);
         }
     }
+
 
     /**
      * 反序列化对象
