@@ -14,8 +14,5 @@ public class MuseConsumerApplication {
         SpringApplication.run(MuseConsumerApplication.class, args);
     }
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+
 }
