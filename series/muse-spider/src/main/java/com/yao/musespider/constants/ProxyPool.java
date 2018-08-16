@@ -23,6 +23,6 @@ public class ProxyPool {
     public static final Map<String,Class> proxyMap = new HashMap<String, Class>();
 
     static {
-        //TODO发送请求获取代理
+        //TODO 发送请求获取代理
     }
 }
