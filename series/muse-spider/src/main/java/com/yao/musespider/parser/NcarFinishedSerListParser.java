@@ -1,5 +1,6 @@
 package com.yao.musespider.parser;
 
+import com.yao.musespider.entity.Series;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -7,9 +8,9 @@ import org.jsoup.select.Elements;
 
 import java.util.List;
 
-public class NcarFinishedSerListParser implements IPageParser<NcarFinishedSerListParser> {
+public class NcarFinishedSerListParser implements IPageParser<Series> {
     @Override
-    public List<NcarFinishedSerListParser> parser(String html) {
+    public List<Series> parser(String html) {
         System.out.println("test");
         Document document = Jsoup.parse(html);
         Elements elements = document.select("th.new");
