@@ -7,6 +7,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class NcarFinishedSerListParser implements IPageParser<Series> {
     @Override
@@ -18,8 +20,15 @@ public class NcarFinishedSerListParser implements IPageParser<Series> {
             Elements e = element.select("a.s").select(".xst");
             String href = e.get(0).attr("href");
             String text = e.get(0).text();
+
             System.out.println(href);
             System.out.println(text);
+            String pattern = "[^a-zA-Z]+";
+            Pattern r = Pattern.compile(pattern);
+            Matcher m = r.matcher(text);
+            if (m.find()) {
+                System.out.println(m.group(0));
+            }
 
         }
 

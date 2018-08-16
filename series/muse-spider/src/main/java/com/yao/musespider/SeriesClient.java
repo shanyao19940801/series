@@ -7,9 +7,9 @@ import com.yao.musespider.task.NacrSeriesPageTask;
 public class SeriesClient extends BaseHttpClient {
 
     public static void main(String[] args) {
-//        seriesList("http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=2");
+        seriesList("http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=2");
         //爬取具体某个美剧信息
-        seriesPage("http://mcar.cc/forum.php?mod=viewthread&tid=32893&extra=page%3D2%26filter%3Dtypeid%26typeid%3D59%26orderby%3Dlastpost");
+//        seriesPage("http://mcar.cc/forum.php?mod=viewthread&tid=32299&extra=page%3D2%26filter%3Dtypeid%26typeid%3D59%26orderby%3Dlastpost");
 
     }
 
