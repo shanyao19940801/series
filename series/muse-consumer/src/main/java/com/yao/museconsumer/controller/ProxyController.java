@@ -14,8 +14,13 @@ public class ProxyController {
     @Autowired
     ProxyService proxyService;
 
-    @GetMapping(value = "/getproxy")
-    public String getProxys(@RequestParam Integer number) {
+    @RequestMapping(value = "/test")
+    public String test() {
+        return "test";
+    }
+
+    @RequestMapping(value = "/getproxy")
+    public String getProxys(@RequestParam(value = "number",required = false) Integer number) {
         return proxyService.getProxys(number);
     }
 }
