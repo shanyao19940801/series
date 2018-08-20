@@ -1,4 +1,4 @@
-package com.yao.musespider.factory;
+package com.yao.musespider.parser;
 
 import com.yao.musespider.parser.IPageParser;
 

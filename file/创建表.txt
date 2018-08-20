@@ -9,4 +9,20 @@
 		  inserttime 插入时间
 		  updatetime 更新时间
 		  
+影视剧集下载地址：
+	表名：muse_download
+	字段：id
+		  high_definition 高清
+		  low_definition 标清
+		  type 类型 2：百度云，3:种子
+		  inserttime 插入时间
+		  updatetime 更新时间
+		  
+		  
+类型表：
+	表名：muse_catagory
+	字段：id
+		  value 值
+		  name  名称
+		  brief 概要
 		  

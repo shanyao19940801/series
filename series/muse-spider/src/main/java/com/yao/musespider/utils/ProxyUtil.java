@@ -1,4 +1,4 @@
-package com.yao.musespider.http.util;
+package com.yao.musespider.utils;
 
 
 import com.yao.musespider.entity.Proxy;

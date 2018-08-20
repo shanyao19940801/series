@@ -2,7 +2,7 @@ package com.yao.musespider.task;
 
 import com.yao.musespider.entity.Page;
 import com.yao.musespider.entity.Series;
-import com.yao.musespider.factory.PageParserFactory;
+import com.yao.musespider.parser.PageParserFactory;
 import com.yao.musespider.parser.IPageParser;
 import com.yao.musespider.parser.NcarFinishedSerPerParser;
 

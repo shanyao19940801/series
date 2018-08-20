@@ -1,7 +1,7 @@
 package com.yao.musespider.http.client;
 
 import com.yao.musespider.entity.Page;
-import com.yao.musespider.http.util.HttpClientUtil;
+import com.yao.musespider.utils.HttpClientUtil;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.util.EntityUtils;
