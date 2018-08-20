@@ -1,0 +1,12 @@
+影视简单信息表：
+	表名：muse_series_info
+	字段：id
+		  name 名称
+		  page_url每集地址
+		  type 类型 s:电视剧，f:电影
+		  country 国家
+		  finish  是否完结 1：完结，0：未完结
+		  inserttime 插入时间
+		  updatetime 更新时间
+		  
+		  
