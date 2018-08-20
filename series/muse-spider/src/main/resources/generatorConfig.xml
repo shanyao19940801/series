@@ -7,8 +7,8 @@
 <!-- 配置 tableName,使用 Run As Maven build 生成 dao model 层 -->
 <generatorConfiguration>
     <!-- 配置文件路径 -->
-    <properties url="${mybatis.generator.generatorConfig.properties}"/>
-
+    <!--<properties url="${mybatis.generatorConfig.properties}"/>-->
+    <properties resource="generatorConfig.properties"></properties>
     <!--数据库驱动包路径 -->
     <classPathEntry location="${drive.class.path}"/>
 
