@@ -1,4 +1,4 @@
-package com.yao.musespider.http.client;
+package com.yao.musespider.client;
 
 import com.yao.musespider.entity.Page;
 import com.yao.musespider.utils.HttpClientUtil;

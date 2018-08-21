@@ -3,7 +3,7 @@ package com.yao.musespider.task;
 import com.yao.musespider.constants.ProxyPool;
 import com.yao.musespider.entity.Page;
 import com.yao.musespider.entity.Proxy;
-import com.yao.musespider.http.client.BaseHttpClient;
+import com.yao.musespider.client.BaseHttpClient;
 import com.yao.musespider.utils.HttpClientUtil;
 import com.yao.musespider.utils.ProxyUtil;
 import org.apache.http.HttpHost;

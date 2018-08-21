@@ -9,6 +9,8 @@ eureka:
 spring:
   profiles:
     include: mybatis
+  application:
+    name: muse-spider
 
 
 

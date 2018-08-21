@@ -1,19 +1,16 @@
 package com.yao.musespider;
 
 import com.yao.musespider.entity.Page;
-import com.yao.musespider.http.client.BaseHttpClient;
+import com.yao.musespider.client.BaseHttpClient;
 import com.yao.musespider.service.ISeriesService;
 import com.yao.musespider.task.NacrFinishedSeriesTask;
 import com.yao.musespider.task.NacrSeriesPageTask;
-import com.yao.musespider.utils.HttpClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SeriesClient extends BaseHttpClient {
 
@@ -33,8 +30,13 @@ public class SeriesClient extends BaseHttpClient {
         thread.start();
     }
      private static void seriesListCallable(String url) {
-
-
+         try {
+             Page page = BaseHttpClient.getInstance().getPage(url+"1");
+             Page page1 = BaseHttpClient.getInstance().getPage(url+"1");
+             System.out.println("qw");
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
          NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+2,false);
          FutureTask<List> futureTask = new FutureTask<>(task);
          Thread thread = new Thread(futureTask);

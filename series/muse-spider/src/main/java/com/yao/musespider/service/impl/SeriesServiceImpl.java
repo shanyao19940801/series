@@ -3,7 +3,7 @@ package com.yao.musespider.service.impl;
 import com.yao.musespider.dao.SeriesInfoMapper;
 import com.yao.musespider.entity.Page;
 import com.yao.musespider.entity.SeriesInfo;
-import com.yao.musespider.http.client.BaseHttpClient;
+import com.yao.musespider.client.BaseHttpClient;
 import com.yao.musespider.service.ISeriesService;
 import com.yao.musespider.task.NacrFinishedSeriesTask;
 import org.springframework.beans.factory.annotation.Autowired;
