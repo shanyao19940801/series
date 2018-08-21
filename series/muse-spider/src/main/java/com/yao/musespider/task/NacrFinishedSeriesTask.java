@@ -5,6 +5,8 @@ import com.yao.musespider.parser.PageParserFactory;
 import com.yao.musespider.parser.IPageParser;
 import com.yao.musespider.parser.NcarFinishedSerListParser;
 
+import java.util.List;
+
 //爬取美剧列表信息任务
 public class NacrFinishedSeriesTask extends AbstractTask<NacrFinishedSeriesTask> {
     public NacrFinishedSeriesTask(String url, boolean isUseProxy) {
@@ -21,7 +23,8 @@ public class NacrFinishedSeriesTask extends AbstractTask<NacrFinishedSeriesTask>
     public void handle(Page page) {
         IPageParser pageParser = PageParserFactory.getParserByClazz(NcarFinishedSerListParser.class);
         if (pageParser != null) {
-            pageParser.parser(page.getHtml());
+            List list = pageParser.parser(page.getHtml());
+
         }
     }
 

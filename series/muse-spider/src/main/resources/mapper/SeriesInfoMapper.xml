@@ -100,6 +100,17 @@
       #{type,jdbcType=INTEGER}, #{country,jdbcType=VARCHAR}, #{finish,jdbcType=INTEGER}, 
       #{inserttime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
   </insert>
+
+  <insert id="insertList" parameterType="java.util.List">
+    insert into muse_series_info (id, name, page_url,
+          type, country, finish,
+          inserttime, updatetime)
+    <foreach collection="list" item="item" separator=",">
+      values (#{item.id,jdbcType=INTEGER}, #{item.name,jdbcType=VARCHAR}, #{item.pageUrl,jdbcType=VARCHAR},
+      #{item.type,jdbcType=INTEGER}, #{item.country,jdbcType=VARCHAR}, #{item.finish,jdbcType=INTEGER},
+      #{item.inserttime,jdbcType=TIMESTAMP}, #{item.updatetime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
   <insert id="insertSelective" parameterType="com.yao.musespider.entity.SeriesInfo" >
     insert into muse_series_info
     <trim prefix="(" suffix=")" suffixOverrides="," >

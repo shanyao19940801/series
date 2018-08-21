@@ -19,4 +19,6 @@ public interface SeriesInfoMapper {
     int updateByExampleSelective(@Param("record") SeriesInfo record, @Param("example") SeriesInfoExample example);
 
     int updateByExample(@Param("record") SeriesInfo record, @Param("example") SeriesInfoExample example);
+
+    void insertList(@Param("list") List<SeriesInfo> list);
 }
