@@ -9,10 +9,12 @@ public class SeriesInfo {
 
     private String pageUrl;
 
+    //'类型 3:电视剧，4:电影',
     private Integer type;
 
     private String country;
 
+    //'是否完结 1：完结，0：未完结',
     private Integer finish;
 
     private Date inserttime;
