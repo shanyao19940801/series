@@ -1,6 +1,5 @@
 package com.yao.musespider.dao;
 
-import com.yao.musespider.entity.MuseSeriesInfo;
 import com.yao.musespider.entity.SeriesInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
