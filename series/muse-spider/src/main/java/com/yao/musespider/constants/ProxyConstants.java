@@ -17,7 +17,7 @@ public class ProxyConstants {
     //文件路劲地址
 //    public static final String FILE_PATH= "src/main/resources/file";
 //    public static final String FILE_PATH= "src/main/resources/file";
-      public static final String FILE_PATH= "../proxy/proxy.ser";
+    public static final String FILE_PATH= "../proxy/proxy.ser";
     public static String RESOURCES__FILE_PATH;
     //保存序列化代理的文件名
     public static String PROXYSER_FILE_NMAE = "proxy.ser";
