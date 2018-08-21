@@ -12,8 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.concurrent.Callable;
 
-public abstract class AbstractTask<T> implements Runnable{
+public abstract class AbstractTask<T> implements Runnable,Callable {
     private static Logger logger = null;//TODO 想办法实现用子类的名称打印log
 
     protected boolean isUseProxy;

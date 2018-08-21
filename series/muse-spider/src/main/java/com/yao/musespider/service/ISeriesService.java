@@ -9,4 +9,6 @@ import java.util.List;
 public interface ISeriesService {
 
     public void insertSeriesList(List<SeriesInfo> list);
+
+    void serieslistFinishe();
 }

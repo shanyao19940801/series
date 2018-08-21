@@ -1,13 +1,27 @@
 package com.yao.musespider;
 
+import com.yao.musespider.entity.Page;
 import com.yao.musespider.http.client.BaseHttpClient;
+import com.yao.musespider.service.ISeriesService;
 import com.yao.musespider.task.NacrFinishedSeriesTask;
 import com.yao.musespider.task.NacrSeriesPageTask;
+import com.yao.musespider.utils.HttpClientUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SeriesClient extends BaseHttpClient {
 
+    @Autowired
+    ISeriesService seriesService;
     public static void main(String[] args) {
-        seriesList("http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=1");
+//        seriesList("http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=1");
+        seriesListCallable("http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=");
         //爬取具体某个美剧信息
 //        seriesPage("http://mcar.cc/forum.php?mod=viewthread&tid=32299&extra=page%3D2%26filter%3Dtypeid%26typeid%3D59%26orderby%3Dlastpost");
 
@@ -18,6 +32,23 @@ public class SeriesClient extends BaseHttpClient {
         Thread thread = new Thread(new NacrFinishedSeriesTask(url, false));
         thread.start();
     }
+     private static void seriesListCallable(String url) {
+
+
+         NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+2,false);
+         FutureTask<List> futureTask = new FutureTask<>(task);
+         Thread thread = new Thread(futureTask);
+         thread.start();
+         try {
+             List list = futureTask.get();
+             System.out.println(list);
+         } catch (InterruptedException e) {
+             e.printStackTrace();
+         } catch (ExecutionException e) {
+             e.printStackTrace();
+         }
+     }
+
     private static void seriesPage(String s) {
         String url = s;
         Thread thread = new Thread(new NacrSeriesPageTask(url, false));

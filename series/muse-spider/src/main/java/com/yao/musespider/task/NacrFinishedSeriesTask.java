@@ -13,8 +13,9 @@ import java.util.List;
 //爬取美剧列表信息任务
 
 public class NacrFinishedSeriesTask extends AbstractTask<NacrFinishedSeriesTask> {
-    @Autowired
-    ISeriesService seriesService;
+    private List list;
+//    @Autowired
+//    ISeriesService seriesService;
     public NacrFinishedSeriesTask(String url, boolean isUseProxy) {
         this.url = url;
         this.isUseProxy = isUseProxy;
@@ -29,14 +30,20 @@ public class NacrFinishedSeriesTask extends AbstractTask<NacrFinishedSeriesTask>
     public void handle(Page page) {
         IPageParser pageParser = PageParserFactory.getParserByClazz(NcarFinishedSerListParser.class);
         if (pageParser != null) {
-            List list = pageParser.parser(page.getHtml());
-            seriesService.insertSeriesList(list);
-            System.out.println("保存");
+            list = pageParser.parser(page.getHtml());
+//            seriesService.insertSeriesList(list);
         }
     }
 
     @Override
     public void run() {
+
+    }
+
+    @Override
+    public List call() throws Exception {
+        System.out.println("访问url"+url);
         this.getPage(url);
+        return list;
     }
 }

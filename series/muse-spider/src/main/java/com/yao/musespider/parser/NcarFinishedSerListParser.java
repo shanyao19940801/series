@@ -18,6 +18,8 @@ public class NcarFinishedSerListParser implements IPageParser<SeriesInfo> {
     public List<SeriesInfo> parser(String html) {
         Document document = Jsoup.parse(html);
         Elements elements = document.select("th.new");
+        System.out.println("yuansu:"+elements.size());
+        System.out.println(html);
         List<SeriesInfo> list = new ArrayList<>();
         for (Element element : elements) {
             SeriesInfo seriesInfo = new SeriesInfo();

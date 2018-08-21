@@ -33,4 +33,9 @@ public class NacrSeriesPageTask extends AbstractTask<NacrSeriesPageTask>{
     public void run() {
         this.getPage(url);
     }
+
+    @Override
+    public Object call() throws Exception {
+        return null;
+    }
 }
