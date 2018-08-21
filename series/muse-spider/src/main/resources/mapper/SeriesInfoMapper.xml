@@ -105,8 +105,9 @@
     insert into muse_series_info (id, name, page_url,
           type, country, finish,
           inserttime, updatetime)
+    values
     <foreach collection="list" item="item" separator=",">
-      values (#{item.id,jdbcType=INTEGER}, #{item.name,jdbcType=VARCHAR}, #{item.pageUrl,jdbcType=VARCHAR},
+       (#{item.id,jdbcType=INTEGER}, #{item.name,jdbcType=VARCHAR}, #{item.pageUrl,jdbcType=VARCHAR},
       #{item.type,jdbcType=INTEGER}, #{item.country,jdbcType=VARCHAR}, #{item.finish,jdbcType=INTEGER},
       #{item.inserttime,jdbcType=TIMESTAMP}, #{item.updatetime,jdbcType=TIMESTAMP})
     </foreach>
