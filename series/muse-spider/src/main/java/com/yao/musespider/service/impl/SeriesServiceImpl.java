@@ -42,7 +42,7 @@ public class SeriesServiceImpl implements ISeriesService {
                     re = re.substring(11,re.length());
                     pageNum = Integer.parseInt(re);
                     for (int i = 1; i <= pageNum; i++) {
-                        NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+"1",false);
+                        NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+i,true);
                         FutureTask<List> futureTask = new FutureTask<>(task);
                         Thread thread = new Thread(futureTask);
                         thread.start();
