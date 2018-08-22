@@ -1,6 +1,6 @@
 create table muse_series_info(
 	id int primary key auto_increment comment 'id',
-	name varchar(20) comment '名称',
+	name varchar(50) comment '名称',
 	page_url varchar(200) comment '每集地址',
 	type int default 3 comment '类型 3:电视剧，4:电影',
 	country varchar(20) comment '国家',
