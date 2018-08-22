@@ -1,6 +1,5 @@
 package com.yao.musespider.parser;
 
-import com.yao.musespider.entity.Series;
 import com.yao.musespider.entity.SeriesInfo;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,7 +16,11 @@ public class NcarFinishedSerListParser implements IPageParser<SeriesInfo> {
     @Override
     public List<SeriesInfo> parser(String html) {
         Document document = Jsoup.parse(html);
-        Elements elements = document.select("th.new");
+        Elements elements = new Elements();
+        elements = document.select("th.new");
+        if (elements.size() <= 0 ) {
+            elements = document.select("th.common");
+        }
         System.out.println("yuansu:"+elements.size());
 //        System.out.println(html);
         List<SeriesInfo> list = new ArrayList<>();

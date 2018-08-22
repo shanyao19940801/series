@@ -61,7 +61,7 @@ public abstract class AbstractTask<T> implements Runnable,Callable {
 
             if (currentProxy != null && !ProxyUtil.isDiscardProxy(currentProxy)) {
                 //TODO 改造ProxyPool
-                ProxyPool.proxyQueue.add(currentProxy);
+//                ProxyPool.proxyQueue.add(currentProxy);
             } else {
                 if (currentProxy != null)
                     logger.info("丢弃代理：" + currentProxy.getProxyStr());

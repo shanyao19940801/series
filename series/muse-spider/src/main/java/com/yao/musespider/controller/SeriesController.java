@@ -5,8 +5,8 @@ import com.yao.musespider.client.RequestClient;
 import com.yao.musespider.constants.ProxyPool;
 import com.yao.musespider.entity.Proxy;
 import com.yao.musespider.service.ISeriesService;
+import com.yao.musespider.utils.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +25,13 @@ public class SeriesController {
     public String serieslistFinishe(){
         String proxy = requestClient.getProxy();
         List<Proxy> proxyList = JSON.parseArray(proxy).toJavaList(Proxy.class);
+        ProxyPool.proxyQueue.addAll(proxyList);
+        seriesService.serieslistFinishe();
+        return "request success";
+    }
+    @RequestMapping("/list/finish01")
+    public String serieslistFinishe01(){
+        List<Proxy> proxyList = JSON.parseArray(IOUtils.getProxysStringAll("E:\\file\\proxysstring.txt")).toJavaList(Proxy.class);
         ProxyPool.proxyQueue.addAll(proxyList);
         seriesService.serieslistFinishe();
         return "request success";
