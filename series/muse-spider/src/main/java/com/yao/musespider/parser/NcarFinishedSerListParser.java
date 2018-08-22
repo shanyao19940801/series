@@ -30,7 +30,7 @@ public class NcarFinishedSerListParser implements IPageParser<SeriesInfo> {
         for (Element element : elements) {
             SeriesInfo seriesInfo = new SeriesInfo();
             Elements e = element.select("a.s").select(".xst");
-            String href = e.get(0).attr("href");
+            String href = "http://mcar.cc/" + e.get(0).attr("href");
             seriesInfo.setPageUrl(href);
             String text = e.get(0).text();
 
