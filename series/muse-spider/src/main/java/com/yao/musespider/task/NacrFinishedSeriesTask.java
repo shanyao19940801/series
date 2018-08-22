@@ -4,9 +4,7 @@ import com.yao.musespider.entity.Page;
 import com.yao.musespider.parser.PageParserFactory;
 import com.yao.musespider.parser.IPageParser;
 import com.yao.musespider.parser.NcarFinishedSerListParser;
-import com.yao.musespider.service.ISeriesService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
 
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class NacrFinishedSeriesTask extends AbstractTask<NacrFinishedSeriesTask>
 
     @Override
     public void retry() {
-
+        list = null;
     }
 
     @Override

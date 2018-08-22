@@ -42,13 +42,17 @@ public class SeriesServiceImpl implements ISeriesService {
                     re = re.substring(11,re.length());
                     pageNum = Integer.parseInt(re);
                     for (int i = 1; i <= pageNum; i++) {
-                        NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+i,true);
-                        FutureTask<List> futureTask = new FutureTask<>(task);
-                        Thread thread = new Thread(futureTask);
-                        thread.start();
-                        List list = futureTask.get();
-                        if (list != null && list.size() > 0) {
-//                            seriesInfoMapper.insertList(list);
+                        while (true) {
+                            System.out.println("11111111");
+                            NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+i,true);
+                            FutureTask<List> futureTask = new FutureTask<>(task);
+                            Thread thread = new Thread(futureTask);
+                            thread.start();
+                            List list = futureTask.get();
+                            if (list != null && list.size() > 0) {
+                                seriesInfoMapper.insertList(list);
+                                break;
+                            }
                         }
                     }
                 }
