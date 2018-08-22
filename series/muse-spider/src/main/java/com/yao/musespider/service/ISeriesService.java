@@ -11,4 +11,6 @@ public interface ISeriesService {
     public void insertSeriesList(List<SeriesInfo> list);
 
     void serieslistFinishe();
+
+    void serieslistFinisheByPage(Integer pagenum);
 }

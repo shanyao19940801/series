@@ -7,6 +7,7 @@ import com.yao.musespider.client.BaseHttpClient;
 import com.yao.musespider.service.ISeriesService;
 import com.yao.musespider.task.NacrFinishedSeriesTask;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -19,6 +20,8 @@ import java.util.regex.Pattern;
 @Service
 public class SeriesServiceImpl implements ISeriesService {
 
+    @Value("${ncarfinishpath}")
+    String url;
     @Autowired
     SeriesInfoMapper seriesInfoMapper;
 
@@ -29,7 +32,7 @@ public class SeriesServiceImpl implements ISeriesService {
 
     @Override
     public void serieslistFinishe() {
-        String url = "http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=";
+//        String url = "http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=";
         try {
             int pageNum;
             Page page = BaseHttpClient.getInstance().getPage(url+"1");
@@ -60,6 +63,27 @@ public class SeriesServiceImpl implements ISeriesService {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void serieslistFinisheByPage(Integer pagenum) {
+        try {
+            while (true) {
+                NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+pagenum,true);
+                FutureTask<List> futureTask = new FutureTask<>(task);
+                Thread thread = new Thread(futureTask);
+                thread.start();
+                List list = futureTask.get();
+                if (list != null && list.size() > 0) {
+                    seriesInfoMapper.insertList(list);
+                    break;
+                }
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

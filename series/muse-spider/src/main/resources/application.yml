@@ -12,5 +12,7 @@ spring:
   application:
     name: muse-spider
 
+ncarfinishpath: http://mcar.cc/forum.php?mod=forumdisplay&fid=129&typeid=59&orderby=lastpost&filter=typeid&typeid=59&orderby=lastpost&page=
+
 
 
