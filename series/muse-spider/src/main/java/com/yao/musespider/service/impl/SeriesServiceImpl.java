@@ -74,7 +74,7 @@ public class SeriesServiceImpl implements ISeriesService {
     public void serieslistFinisheByPage(Integer pagenum) {
         try {
             while (true) {
-                NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+pagenum,true);
+                NacrFinishedSeriesTask task = new NacrFinishedSeriesTask(url+pagenum,false);
                 FutureTask<List> futureTask = new FutureTask<>(task);
                 Thread thread = new Thread(futureTask);
                 thread.start();
