@@ -43,7 +43,10 @@
         </javaClientGenerator>
 
         <!--对应数据库表名 -->
-        <table tableName="proxy">
+<!--        <table tableName="proxy">
+
+        </table>     -->
+        <table tableName="muse_series_info">
 
         </table>
     </context>
