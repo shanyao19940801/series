@@ -18,23 +18,26 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 @Configuration
-@MapperScan(basePackages = "com.yao.musetestdatasoures.dao.master",sqlSessionFactoryRef = "baseSqlSessionTemplate")
+@MapperScan(basePackages = "com.yao.musetestdatasoures.dao.master",sqlSessionTemplateRef = "masterSqlSessionTemplate")
 public class MasterDataSourceConfig {
     @Bean(name = "masterDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.master")
     @Primary
     public DataSource setDataSource() {
+        System.out.println("主数据源");
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = "masterTransactionManager")
     @Primary
     public DataSourceTransactionManager setTransactionManager(@Qualifier("masterDataSource") DataSource dataSource) {
-        return new DataSourceTransactionManager();
+        System.out.println("DataSourceTransactionManager");
+        return new DataSourceTransactionManager(dataSource);
     }
     @Bean(name = "masterSqlSessionFactory")
     @Primary
     public SqlSessionFactory setSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource) throws Exception {
+        System.out.println("SqlSessionFactory");
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/master/*.xml"));

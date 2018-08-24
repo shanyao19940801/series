@@ -62,4 +62,13 @@ public class Proxy {
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
     }
+
+    @Override
+    public String toString() {
+        return "Proxy{" +
+                "id=" + id +
+                ", port=" + port +
+                ", ip='" + ip + '\'' +
+                '}';
+    }
 }

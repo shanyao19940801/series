@@ -82,4 +82,16 @@ public class MuseSeriesInfo {
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
     }
+
+    @Override
+    public String toString() {
+        return "MuseSeriesInfo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", pageUrl='" + pageUrl + '\'' +
+                ", type=" + type +
+                ", country='" + country + '\'' +
+                ", finish=" + finish +
+                '}';
+    }
 }

@@ -25,12 +25,12 @@ public class TestController {
     @RequestMapping(value = "/proxy")
     public String proxy() {
         Proxy proxy = proxyMapper.selectByPrimaryKey(1000);
-        return "proxy";
+        return proxy.toString();
     }
 
     @RequestMapping(value = "/series")
     public String serise() {
         MuseSeriesInfo seriesInfo =  seriesInfoMapper.selectByPrimaryKey(101046);
-        return "series";
+        return seriesInfo.toString();
     }
 }
