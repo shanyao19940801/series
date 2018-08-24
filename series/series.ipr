@@ -11,6 +11,7 @@
         <module name="muse-proxy" />
         <module name="muse-server" />
         <module name="muse-spider" />
+        <module name="muse-test-datasource1" />
         <module name="muse-test-datasoures" />
         <module name="test" />
       </profile>
@@ -21,6 +22,7 @@
       <module name="muse-proxy" target="1.8" />
       <module name="muse-server" target="1.8" />
       <module name="muse-spider" target="1.8" />
+      <module name="muse-test-datasource1" target="1.8" />
       <module name="muse-test-datasoures" target="1.8" />
       <module name="test" target="1.8" />
     </bytecodeTargetLevel>
@@ -30,6 +32,7 @@
     <file url="file://$PROJECT_DIR$/muse-proxy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/muse-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/muse-spider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/muse-test-datasource1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/muse-test-datasoures" charset="UTF-8" />
   </component>
   <component name="InspectionProjectProfileManager">
@@ -48,6 +51,7 @@
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/muse-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/muse-test-datasoures/pom.xml" />
+        <option value="$PROJECT_DIR$/muse-test-datasource1/pom.xml" />
       </list>
     </option>
   </component>
@@ -178,6 +182,7 @@
       <module fileurl="file://$PROJECT_DIR$/muse-proxy/muse-proxy.iml" filepath="$PROJECT_DIR$/muse-proxy/muse-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/muse-server/muse-server.iml" filepath="$PROJECT_DIR$/muse-server/muse-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/muse-spider/muse-spider.iml" filepath="$PROJECT_DIR$/muse-spider/muse-spider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/muse-test-datasource1/muse-test-datasource1.iml" filepath="$PROJECT_DIR$/muse-test-datasource1/muse-test-datasource1.iml" />
       <module fileurl="file://$PROJECT_DIR$/muse-test-datasoures/muse-test-datasoures.iml" filepath="$PROJECT_DIR$/muse-test-datasoures/muse-test-datasoures.iml" />
     </modules>
   </component>
