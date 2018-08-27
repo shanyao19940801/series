@@ -10,6 +10,13 @@ spring:
           # 使用druid数据源
           type: com.alibaba.druid.pool.DruidDataSource
           driver-class-name: com.mysql.jdbc.Driver
+         name: seires-read
+          jdbc-url: jdbc:mysql://47.100.211.121:3306/series?useUnicode=true&characterEncoding=utf-8
+          username: root
+          password: shanyao
+          # 使用druid数据源
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: com.mysql.jdbc.Driver
 #          filters: stat
 #          maxActive: 20
 #          initialSize: 1
