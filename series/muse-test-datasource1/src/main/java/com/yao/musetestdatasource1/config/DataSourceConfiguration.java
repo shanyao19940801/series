@@ -1,5 +1,7 @@
 package com.yao.musetestdatasource1.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Configuration
 public class DataSourceConfiguration {
+    private static Logger logger = LoggerFactory.getLogger(DataSourceConfiguration.class);
+
     @Value("${spring.datasource.type}")
     private Class<? extends DataSource> dataSourceType;
 
@@ -20,6 +24,7 @@ public class DataSourceConfiguration {
     @Primary
     @ConfigurationProperties(prefix = "spring.datasource.master")
     public DataSource writeDataSource() {
+        logger.info("-------------------- writeDataSource init ---------------------");
         return DataSourceBuilder.create().type(dataSourceType).build();
     }
 
@@ -30,6 +35,7 @@ public class DataSourceConfiguration {
     @Bean(name = "readDataSource", destroyMethod = "close", initMethod="init")
     @ConfigurationProperties(prefix = "spring.slave")
     public DataSource readDataSourceOne() {
+        logger.info("-------------------- readDataSourceOne init ---------------------");
         return DataSourceBuilder.create().type(dataSourceType).build();
     }
 
